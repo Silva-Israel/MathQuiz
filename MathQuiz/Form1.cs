@@ -133,6 +133,11 @@ namespace Math_Quiz
                 // Time Left label.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " seconds";
+
+                if (timeLeft < 6)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
             }
             else
             {
@@ -147,6 +152,7 @@ namespace Math_Quiz
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
             }
+            
         }
 
         /// <summary> 
@@ -179,11 +185,6 @@ namespace Math_Quiz
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);
             }
-        }
-
-        private void ChangeColor()
-        {
-            
         }
     }
 }
