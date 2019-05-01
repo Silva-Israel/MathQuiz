@@ -180,5 +180,10 @@ namespace Math_Quiz
                 answerBox.Select(0, lengthOfAnswer);
             }
         }
+
+        private void ChangeColor()
+        {
+            
+        }
     }
 }
