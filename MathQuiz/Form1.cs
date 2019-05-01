@@ -12,7 +12,6 @@ namespace Math_Quiz
 {
     public partial class Form1 : Form
     {
-
         // Create a Random object called randomizer 
         // to generate random numbers.
         Random randomizer = new Random();
@@ -40,7 +39,6 @@ namespace Math_Quiz
         // This integer variable keeps track of the 
         // remaining time.
         int timeLeft;
-
 
         public Form1()
         {
