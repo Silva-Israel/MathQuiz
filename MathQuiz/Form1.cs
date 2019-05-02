@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Math_Quiz
 {
     public partial class Form1 : Form
     {
+        private SoundPlayer soundPlayer;
         // Create a Random object called randomizer 
         // to generate random numbers.
         Random randomizer = new Random();
@@ -43,6 +45,7 @@ namespace Math_Quiz
         public Form1()
         {
             InitializeComponent();
+            soundPlayer = new SoundPlayer(@"C:\Windows\Media\chimes.wav");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -170,6 +173,11 @@ namespace Math_Quiz
                 return false;
         }
 
+        private void PlaySound()
+        {
+            soundPlayer.Play();
+        }
+
         /// <summary> 
         /// Modify the behavior of the NumericUpDown control
         /// to make it easier to enter numeric values for
@@ -184,6 +192,38 @@ namespace Math_Quiz
             {
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);
+            }
+        }
+
+        private void sumValueChange(object sender, EventArgs e)
+        {
+            if (addend1 + addend2 == sum.Value)
+            {
+                PlaySound();
+            }
+        }
+
+        private void differenceValueChange(object sender, EventArgs e)
+        {
+            if (minuend - subtrahend == difference.Value)
+            {
+                PlaySound();
+            }
+        }
+
+        private void productValueChange(object sender, EventArgs e)
+        {
+            if (multiplicand * multiplier == product.Value)
+            {
+                PlaySound();
+            }
+        }
+
+        private void quotientValueChange(object sender, EventArgs e)
+        {
+            if (dividend / divisor == quotient.Value)
+            {
+                PlaySound();
             }
         }
     }
