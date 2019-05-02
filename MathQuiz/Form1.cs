@@ -50,6 +50,8 @@ namespace Math_Quiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var today = DateTime.Today.ToString("dd MMMM yyyy");
+            showDate.Text = today;
         }
 
         /// <summary> 
@@ -127,6 +129,8 @@ namespace Math_Quiz
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
+
+                // timeLabel.BackColor = Control.DefaultBackColor;
             }
             else if (timeLeft > 0)
             {
@@ -154,6 +158,8 @@ namespace Math_Quiz
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
+
+                timeLabel.BackColor = Control.DefaultBackColor;
             }
             
         }
